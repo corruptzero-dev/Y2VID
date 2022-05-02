@@ -11,7 +11,7 @@
 </head>
 <body>
 <header>
-    <a href="http://localhost:8080/">
+    <a href="/">
         <span class="span-en292">Y2VID</span>
     </a>
 </header>
@@ -19,7 +19,7 @@
     <div class="Container">
         <div class="Column">
             <h2 class="heading2-x390q">Paste YouTube link below</h2>
-            <form method="GET" id="submit-form" action="http://localhost:8080/download" onkeydown="return event.key !== 'Enter';">
+            <form method="GET" id="submit-form" action="https://y2video.herokuapp.com/download" onkeydown="return event.key !== 'Enter';">
                 <div>
                     <label>
                         <input type="text" id="link" placeholder="Link" name="link" style="padding: 4px 4px;" required>
@@ -41,7 +41,7 @@
         </div>
     </div>
 </section>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
     function clickFunction() {
         const input = document.getElementById('link').value;
