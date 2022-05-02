@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.title-text {
+    text-align: center;
+    left: 50%;
+    top: 70%;
+}
+
+.submit-form {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: solid black 1px;
+}
+
+.settings {
+    position: relative;
+    justify-content: center;
+}

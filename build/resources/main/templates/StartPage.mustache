@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://styles.relate.design/css/styles.css">
+    <link rel="stylesheet" href="/styles/startpage.css"/>
+    <title>Start</title>
+</head>
+<body>
+<header>
+    <a href="http://localhost:8080/">
+        <span class="span-en292">Y2VID</span>
+    </a>
+</header>
+<section>
+    <div class="Container">
+        <div class="Column">
+            <h2 class="heading2-x390q">Paste YouTube link below</h2>
+            <form method="GET" id="submit-form" action="http://localhost:8080/download" onkeydown="return event.key !== 'Enter';">
+                <div>
+                    <label>
+                        <input type="text" id="link" placeholder="Link" name="link" style="padding: 4px 4px;" required>
+                    </label>
+                    <label for="types">
+                        <select name="types" style="padding: 4px 4px;">
+                            <option value="Video">Video</option>
+                            <option value="Audio">Audio</option>
+                        </select>
+                    </label>
+                    <a class="Button">
+                        <span onclick="return clickFunction();" style="cursor:pointer">Convert</span>
+                    </a>
+                </div>
+            </form>
+        </div>
+        <div class="Column">
+            <img src="https://relate-av4mfw.s3.us-east-2.amazonaws.com/626e8cfdd917974287576c8a/YouTube-Icon-Full-Color-Logo.wine.svg"/>
+        </div>
+    </div>
+</section>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+    function clickFunction() {
+        const input = document.getElementById('link').value;
+        const re = new RegExp("(?<=youtu.be/|watch\\?v=|/videos/|embed\\/)[^#\\&\\?]*");
+        if (re.test(input)){
+            $("#submit-form").submit();
+        } else {
+            alert("Please, enter a valid YouTube link.")
+            return false;
+        }
+    }
+</script>
+</body>
+</html>
