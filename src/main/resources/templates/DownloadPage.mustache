@@ -21,41 +21,42 @@
             <h2 class="heading2-x390q">Choose your preferences</h2>
             <a class="Button">
                 <form method="POST" action="/api/download">
-                        <div class="submit-form">
-                            <label>
-                                <input type="text" id="link" placeholder="Link" name="link" value="{{link}}" readonly>
-                            </label>
-                            <button id="submit-btn" class="submit-btn" type="submit">Download</button>
-                            <br>
-                            Format:
-                            <label>
+                    <div class="submit-form">
+                        <label>
+                            <input type="text" id="link" placeholder="Link" name="link" value="{{link}}" readonly>
+                        </label>
+                        <button id="submit-btn" class="submit-btn" type="submit">Download</button>
+                        <br>
+                        Format:
+                        <label>
                                 <span style="font-weight: bold">
                                     {{type}}
                                 </span>
-                            </label>
-                            <input type="button" id="change-button" class="change-button" onclick="history.back(); return false;" value="Change"/>
+                        </label>
+                        <input type="button" id="change-button" class="change-button"
+                               onclick="history.back(); return false;" value="Change"/>
 
-                            <div class="settings">
-                                Extension:
-                                <label for="formats">
-                                    <select name="formats" id="formats" size="1">
-                                            {{#extensions}}
-                                                <option>{{.}}</option>
-                                                {{/extensions}}
-                                    </select>
-                                </label>
-                                <br>
-                                Quality:
-                                <label for="qualities">
-                                    <select name="qualities" id="qualities" size="1">
-                                            {{#qualityLabels}}
-                                                <option>{{.}}</option>
-                                                {{/qualityLabels}}
-                                    </select>
-                                </label>
-                            </div>
+                        <div class="settings">
+                            Extension:
+                            <label for="formats">
+                                <select name="formats" id="formats" size="1">
+                                    {{#extensions}}
+                                        <option>{{.}}</option>
+                                    {{/extensions}}
+                                </select>
+                            </label>
+                            <br>
+                            Quality:
+                            <label for="qualities">
+                                <select name="qualities" id="qualities" size="1">
+                                    {{#qualityLabels}}
+                                        <option>{{.}}</option>
+                                    {{/qualityLabels}}
+                                </select>
+                            </label>
                         </div>
-                    </form>
+                    </div>
+                </form>
             </a>
         </div>
         <div class="Column">
