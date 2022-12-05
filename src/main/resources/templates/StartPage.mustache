@@ -46,7 +46,7 @@
     function clickFunction() {
         const input = document.getElementById('link').value;
         const re = new RegExp("(?<=youtu.be/|watch\\?v=|/videos/|embed\\/)[^#\\&\\?]*");
-        if (re.test(input)){
+        if (re.test(input)) {
             $("#submit-form").submit();
         } else {
             alert("Please, enter a valid YouTube link.")
