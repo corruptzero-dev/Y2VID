@@ -4,6 +4,7 @@ import com.github.kiulian.downloader.model.videos.VideoInfo;
 import com.github.kiulian.downloader.model.videos.formats.AudioFormat;
 import com.github.kiulian.downloader.model.videos.formats.VideoFormat;
 import com.y2vid.service.VideoServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Controller
+@Slf4j
 public class MainViewController {
     @Autowired
     VideoServiceImpl service;
@@ -33,6 +35,7 @@ public class MainViewController {
 
         String videoId = service.getVideoIdFromLink(link);
         VideoInfo videoInfo = service.getVideoInfo(videoId);
+        log.info(videoInfo.toString());
 
         Set<String> qualityLabelSet = new HashSet<>();
         Set<String> extensionSet = new HashSet<>();

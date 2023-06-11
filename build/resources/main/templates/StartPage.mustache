@@ -19,7 +19,7 @@
     <div class="Container">
         <div class="Column">
             <h2 class="heading2-x390q">Paste YouTube link below</h2>
-            <form method="GET" id="submit-form" action="https://y2video.herokuapp.com/download" onkeydown="return event.key !== 'Enter';">
+            <form method="GET" id="submit-form" action="download" onkeydown="return event.key !== 'Enter';">
                 <div>
                     <label>
                         <input type="text" id="link" placeholder="Link" name="link" style="padding: 4px 4px;" required>
@@ -37,7 +37,7 @@
             </form>
         </div>
         <div class="Column">
-            <img src="https://relate-av4mfw.s3.us-east-2.amazonaws.com/626e8cfdd917974287576c8a/YouTube-Icon-Full-Color-Logo.wine.svg"/>
+            <img src="/images/youtube.png" alt=""/>
         </div>
     </div>
 </section>
@@ -46,7 +46,7 @@
     function clickFunction() {
         const input = document.getElementById('link').value;
         const re = new RegExp("(?<=youtu.be/|watch\\?v=|/videos/|embed\\/)[^#\\&\\?]*");
-        if (re.test(input)){
+        if (re.test(input)) {
             $("#submit-form").submit();
         } else {
             alert("Please, enter a valid YouTube link.")
